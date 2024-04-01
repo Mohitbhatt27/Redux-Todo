@@ -1,12 +1,14 @@
-import { ADD_TODO, EDIT_TODO, REMOVE_TODO } from '../constants/index'
+import { ADD_TODO, EDIT_TODO, REMOVE_TODO } from "../constants/index";
 
-function todoReducer (todos = [], action){
-
+function todoReducer(todos = [], action) {
   if (action.type === ADD_TODO) {
-    return [...todos, {
-      id: action.payload.id,
-      title: action.payload.title
-    }];
+    return [
+      ...todos,
+      {
+        id: action.payload.id,
+        title: action.payload.title,
+      },
+    ];
   }
 
   if (action.type === EDIT_TODO) {
@@ -15,15 +17,14 @@ function todoReducer (todos = [], action){
         todo.title = action.payload.title;
       }
       return todo;
-    })
+    });
   }
 
   if (action.type === REMOVE_TODO) {
-    return todos.filter((todo) => todo.id !== action.payload)
+    return todos.filter((todo) => todo.id !== action.payload);
   }
 
   return todos;
-
 }
 
 export default todoReducer;
