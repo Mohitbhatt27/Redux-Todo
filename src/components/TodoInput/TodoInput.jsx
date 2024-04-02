@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { addTodo } from '../../actions/index';
 import todoSlice from "../../slices/todoSlice";
 function TodoInput() {
   const [todoText, setTodoText] = useState("");
